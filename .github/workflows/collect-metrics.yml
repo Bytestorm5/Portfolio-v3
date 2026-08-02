@@ -1,0 +1,61 @@
+name: Collect GitHub metrics
+
+on:
+  schedule:
+    # 05:15 UTC daily. Off the hour, because scheduled runs at :00 queue behind
+    # everyone else's cron and get delayed.
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/collect-github-metrics.mjs"
+      - ".github/workflows/collect-metrics.yml"
+
+# Only one collection at a time; a queued run would just redo the same work.
+concurrency:
+  group: collect-metrics
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Collect commit activity
+        env:
+          # METRICS_GITHUB_TOKEN is optional: set it to a PAT with `repo` scope
+          # to include private repositories, otherwise the default token reads
+          # public repos just fine.
+          METRICS_GITHUB_TOKEN: ${{ secrets.METRICS_GITHUB_TOKEN || github.token }}
+          METRICS_USER: ${{ vars.METRICS_USER || github.repository_owner }}
+        run: npm run metrics
+
+      - name: Commit snapshot if it changed
+        run: |
+          # generatedAt moves on every run, so diffing the whole file would
+          # commit daily even when no commit data actually changed. Ignore it.
+          SUBSTANTIVE=$(git diff -U0 -- data/github-metrics.json \
+            | grep -E '^[+-]' \
+            | grep -vE '^(\+\+\+|---)' \
+            | grep -v '"generatedAt"' || true)
+
+          if [ -z "$SUBSTANTIVE" ]; then
+            git checkout -- data/github-metrics.json
+            echo "Only the snapshot timestamp moved; nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/github-metrics.json
+          git commit -m "chore(metrics): refresh GitHub commit snapshot"
+          git push

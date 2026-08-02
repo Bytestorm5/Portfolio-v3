@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. The palette carries over the v2 site's identity — an OKLCH
+ * navy→red plane, whitesmoke ink, monospace everywhere — with the chart
+ * colors split out because data marks answer to different rules than UI chrome.
+ */
+:root {
+  color-scheme: dark;
+
+  /* Plane & surfaces */
+  --plane-start: oklch(0.1554 0.0343 237.76);
+  --plane-mid: oklch(0.1554 0 237.76);
+  --plane-end: oklch(0.1554 0.0343 24);
+  /* Solid surface for cards that host data marks: surface gaps and rings are
+     painted in this color, so it cannot be translucent. */
+  --surface-1: #14181c;
+  --surface-2: #191d22;
+
+  /* Ink */
+  --text-primary: #f5f5f5;
+  --text-secondary: #b9bec4;
+  --text-muted: #868d95;
+
+  /* UI accent — links, focus rings, interactive chrome. Not a data color. */
+  --accent: #2ad7d7;
+  --accent-dim: #00bdbe;
+
+  /* Chart tokens. --series-1 sits inside the dark lightness band
+     (OKLCH L 0.62) and clears 3:1 contrast against --surface-1, so it stays
+     legible as a data mark. --accent is UI chrome only and is not held to
+     that bar. */
+  --series-1: #00a5a6;
+  --gridline: #2c3238;
+  --axis: #3b424a;
+
+  /* Org tints, carried over from v2's card treatment */
+  --tint-att: 0, 168, 224;
+  --tint-njit: 203, 33, 33;
+  --tint-cdx: 0, 83, 113;
+  --tint-personal: 240, 28, 251;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+@theme inline {
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-series-1: var(--series-1);
+  --color-gridline: var(--gridline);
+  --color-hairline: var(--border);
+  --font-mono: var(--font-mono);
+}
+
+/* Element defaults belong in @layer base — unlayered rules outrank every
+   Tailwind utility, which would make `text-*` on a link silently do nothing. */
+@layer base {
+  html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(
+      120deg,
+      var(--plane-start) 0%,
+      var(--plane-mid) 50%,
+      var(--plane-end) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  /* Visible focus for keyboard users on every interactive element. */
+  :where(a, button, [tabindex]):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ---- Card fly-in, ported from v2 ------------------------------------- */
+
+@keyframes card-fly-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fly-in {
+  opacity: 0;
+  animation: card-fly-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--fly-in-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fly-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Chart line draw-in ---------------------------------------------- */
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.chart-line {
+  stroke-dasharray: var(--line-length);
+  stroke-dashoffset: var(--line-length);
+  animation: draw-line 1.6s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.chart-area {
+  opacity: 0;
+  animation: fade-in 1.2s ease-out 0.5s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .chart-area {
+    opacity: 1;
+    animation: none;
+  }
+}
