@@ -76,6 +76,28 @@ type ContributorStat = { author: { login: string } | null; weeks: ContributorWee
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 /** /stats/* endpoints answer 202 while GitHub computes the cache. */
 const STATS_RETRIES = 6;
+/** Kept modest so GitHub's secondary rate limiter stays out of the way. */
+const CONCURRENCY = 5;
+
+/** Runs `fn` over `items` with a bounded number of requests in flight. */
+async function mapWithConcurrency<T, R>(
+  items: T[],
+  limit: number,
+  fn: (item: T) => Promise<R>,
+): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let cursor = 0;
+
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (cursor < items.length) {
+      const index = cursor++;
+      results[index] = await fn(items[index]);
+    }
+  });
+
+  await Promise.all(workers);
+  return results;
+}
 
 export type CollectOptions = {
   user?: string;
@@ -210,11 +232,15 @@ export async function collectMetrics(options: CollectOptions = {}): Promise<Metr
   let publicCommits = 0;
   let privateCommits = 0;
 
-  for (const repo of repos) {
-    const stats = await fetchContributorStats(repo);
-    if (!stats) continue;
+  // Fetched a few at a time: serial would be dozens of round trips plus
+  // 202-retry sleeps, which is slow enough to risk a function timeout.
+  const stats = await mapWithConcurrency(repos, CONCURRENCY, fetchContributorStats);
 
-    const mine = stats.find(
+  for (const [index, repo] of repos.entries()) {
+    const repoStats = stats[index];
+    if (!repoStats) continue;
+
+    const mine = repoStats.find(
       (s) => s.author?.login?.toLowerCase() === user.toLowerCase(),
     );
     if (!mine) continue;

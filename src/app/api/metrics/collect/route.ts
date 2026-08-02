@@ -14,7 +14,10 @@ const DEFAULT_MIN_INTERVAL_HOURS = 20;
  * A collection already running. Concurrent callers await the same promise
  * instead of each starting their own walk of the GitHub API.
  */
-let inFlight: Promise<Awaited<ReturnType<typeof collectMetrics>>> | null = null;
+let inFlight: Promise<{
+  metrics: Awaited<ReturnType<typeof collectMetrics>>;
+  persisted: Awaited<ReturnType<typeof writeSnapshot>>;
+}> | null = null;
 
 function secret(): string | undefined {
   // CRON_SECRET is what Vercel Cron sends by default.
@@ -72,20 +75,18 @@ async function handle(request: Request) {
 
   const started = !inFlight;
   inFlight ??= collectMetrics()
-    .then(async (metrics) => {
-      await writeSnapshot(metrics);
-      return metrics;
-    })
+    .then(async (metrics) => ({ metrics, persisted: await writeSnapshot(metrics) }))
     .finally(() => {
       inFlight = null;
     });
 
   try {
-    const metrics = await inFlight;
+    const { metrics, persisted } = await inFlight;
     return NextResponse.json(
       {
         status: started ? "collected" : "joined-in-flight",
         generatedAt: metrics.generatedAt,
+        persisted,
         totals: metrics.totals,
       },
       { status: 200, headers: { "Cache-Control": "no-store" } },

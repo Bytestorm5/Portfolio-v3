@@ -56,11 +56,13 @@ keeps serving the last good data and the response says so.
 
 | Env var | Purpose |
 | --- | --- |
-| `METRICS_CRON_SECRET` / `CRON_SECRET` | Bearer token the endpoint requires. Without one set, the endpoint refuses to run in production. |
-| `METRICS_GITHUB_TOKEN` / `GITHUB_TOKEN` | GitHub auth. Needs `repo` scope to see private repos. |
+| `METRICS_CRON_SECRET` / `CRON_SECRET` | Bearer token the endpoint requires. Without one set, the endpoint refuses to run in production. Vercel Cron sends `CRON_SECRET` automatically. |
+| `METRICS_GITHUB_TOKEN` / `GITHUB_TOKEN` | GitHub auth. Needs `repo` scope to see private repos, and write access to this repo when `METRICS_REPO` is set. |
+| `METRICS_REPO` | e.g. `Bytestorm5/Portfolio-v3`. Set it to persist by committing (required on read-only hosts); leave unset to write to disk. |
+| `METRICS_GIT_BRANCH` | Branch to commit to. Default `main`. |
 | `METRICS_USER` | Defaults to `Bytestorm5`. |
 | `METRICS_MIN_INTERVAL_HOURS` | Idempotency window. Default 20. |
-| `METRICS_DATA_DIR` | Where the snapshot is written. Defaults to `data/`. |
+| `METRICS_DATA_DIR` | Filesystem write path when `METRICS_REPO` is unset. Defaults to `data/`. |
 
 The snapshot itself is served at `/api/metrics`.
 
@@ -73,11 +75,21 @@ METRICS_REPOS=PortfolioSite,Portfolio-v3 npm run metrics    # pin to specific re
 
 ### Persistence
 
-The collector writes to `METRICS_DATA_DIR` (default `data/`), and falls back to the
-snapshot committed in `data/` until a collection has run. That works directly for the
-container deployment — mount a volume at `data/` to keep snapshots across restarts.
-On a platform with a read-only or ephemeral filesystem, point `METRICS_DATA_DIR` at
-durable storage, or the endpoint will re-collect on each cold instance.
+Two backends, picked by whether `METRICS_REPO` is set:
+
+- **Commit-back (`METRICS_REPO` set).** The snapshot is written to
+  `data/github-metrics.json` through the GitHub contents API. Required on serverless
+  hosts, where the function filesystem is read-only and `/tmp` is per-instance and
+  ephemeral — there is nowhere durable to write. The resulting deploy serves the new
+  data, so the render path never fetches at runtime. If the collected data is
+  identical to what is already committed (ignoring `generatedAt`), no commit is made,
+  so a quiet day doesn't trigger a rebuild.
+- **Filesystem (default).** Writes to `METRICS_DATA_DIR`, default `data/`. Suits the
+  container deployment — mount a volume at `data/` to keep snapshots across restarts.
+
+Either way, reads come from the on-disk snapshot, falling back to the copy committed
+in `data/` until a collection has run. Snapshots predating the public/private split
+are upgraded on read rather than rendering as gaps.
 
 > **Note:** the committed snapshot currently only covers `PortfolioSite` and
 > `Portfolio-v3`, and shows no private commits — it was seeded from an environment
@@ -95,10 +107,19 @@ npm run lint
 
 ## Deployment
 
-Works as-is on Vercel (add a Vercel Cron entry pointing at `/api/metrics/collect`;
-it sends `Authorization: Bearer $CRON_SECRET`, which the endpoint accepts). The
-`Dockerfile` builds a standalone image for the container-to-droplet path v2 used;
-note it copies `data/` into the image, since the snapshot is read at runtime.
+**Vercel.** `vercel.json` schedules the collection at `0 10 * * *` — Vercel Cron runs
+on UTC with no timezone support, so this is 05:00 EST in winter and 06:00 EDT in
+summer. Adjust to `0 9 * * *` if you would rather it track EDT. Vercel sends
+`Authorization: Bearer $CRON_SECRET` automatically once `CRON_SECRET` is set.
+
+Required project env vars: `CRON_SECRET`, `METRICS_GITHUB_TOKEN`, and
+`METRICS_REPO=Bytestorm5/Portfolio-v3` (see Persistence above — without it the
+function will try to write to a read-only filesystem).
+
+**Container.** The `Dockerfile` builds a standalone image for the
+container-to-droplet path v2 used; note it copies `data/` into the image, since the
+snapshot is read at runtime. Leave `METRICS_REPO` unset there and drive the endpoint
+from any cron runner.
 
 ## Layout
 
