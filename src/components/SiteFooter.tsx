@@ -8,15 +8,11 @@ export default function SiteFooter() {
           © {new Date().getFullYear()} {profile.name}
         </p>
         <div className="flex flex-wrap gap-x-4 gap-y-2">
-          <a href={`mailto:${profile.links.email}`}>{profile.links.email}</a>
           <a href={profile.links.github} target="_blank" rel="noreferrer">
             GitHub
           </a>
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
-          </a>
-          <a href={profile.links.blog} target="_blank" rel="noreferrer">
-            Blog
           </a>
         </div>
       </div>

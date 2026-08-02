@@ -37,1831 +37,2942 @@
         "language": "C#",
         "commits": 2
       }
-    ]
+    ],
+    "publicCommits": 501,
+    "privateCommits": 0,
+    "publicRepos": 33,
+    "privateRepos": 0
   },
   "weekly": [
     {
       "w": "2021-02-21",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-02-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-03-07",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-03-14",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-03-21",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-03-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-04-04",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-04-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-04-18",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-04-25",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-05-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 2,
+      "cumPriv": 0,
       "cum": 2
     },
     {
       "w": "2021-05-09",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-05-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-05-23",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-05-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-06-06",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-06-13",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-06-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-06-27",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-07-04",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-07-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-07-18",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-07-25",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-08-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-08-08",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-08-15",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-08-22",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-08-29",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-09-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-09-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-09-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-09-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-10-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-10-10",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-10-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-10-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-10-31",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 5,
+      "cumPriv": 0,
       "cum": 5
     },
     {
       "w": "2021-11-07",
+      "pub": 18,
+      "priv": 0,
       "c": 18,
+      "cumPub": 23,
+      "cumPriv": 0,
       "cum": 23
     },
     {
       "w": "2021-11-14",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2021-11-21",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2021-11-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2021-12-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2021-12-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2021-12-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2021-12-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-01-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-01-09",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-01-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-01-23",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-01-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-02-06",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-02-13",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-02-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-02-27",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-03-06",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-03-13",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-03-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-03-27",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-04-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-04-10",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-04-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-04-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-05-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-05-08",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-05-15",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-05-22",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-05-29",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-06-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-06-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-06-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-06-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-07-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-07-10",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-07-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-07-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-07-31",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-08-07",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-08-14",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-08-21",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-08-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-09-04",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-09-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-09-18",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-09-25",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-10-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-10-09",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-10-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-10-23",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-10-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-11-06",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-11-13",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-11-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-11-27",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-12-04",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-12-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-12-18",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2022-12-25",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2023-01-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2023-01-08",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 26,
+      "cumPriv": 0,
       "cum": 26
     },
     {
       "w": "2023-01-15",
+      "pub": 25,
+      "priv": 0,
       "c": 25,
+      "cumPub": 51,
+      "cumPriv": 0,
       "cum": 51
     },
     {
       "w": "2023-01-22",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 53,
+      "cumPriv": 0,
       "cum": 53
     },
     {
       "w": "2023-01-29",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 57,
+      "cumPriv": 0,
       "cum": 57
     },
     {
       "w": "2023-02-05",
+      "pub": 13,
+      "priv": 0,
       "c": 13,
+      "cumPub": 70,
+      "cumPriv": 0,
       "cum": 70
     },
     {
       "w": "2023-02-12",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 72,
+      "cumPriv": 0,
       "cum": 72
     },
     {
       "w": "2023-02-19",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-02-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-03-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-03-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-03-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-03-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-04-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-04-09",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-04-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-04-23",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 75,
+      "cumPriv": 0,
       "cum": 75
     },
     {
       "w": "2023-04-30",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 78,
+      "cumPriv": 0,
       "cum": 78
     },
     {
       "w": "2023-05-07",
+      "pub": 7,
+      "priv": 0,
       "c": 7,
+      "cumPub": 85,
+      "cumPriv": 0,
       "cum": 85
     },
     {
       "w": "2023-05-14",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 86,
+      "cumPriv": 0,
       "cum": 86
     },
     {
       "w": "2023-05-21",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 86,
+      "cumPriv": 0,
       "cum": 86
     },
     {
       "w": "2023-05-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 86,
+      "cumPriv": 0,
       "cum": 86
     },
     {
       "w": "2023-06-04",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 86,
+      "cumPriv": 0,
       "cum": 86
     },
     {
       "w": "2023-06-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 86,
+      "cumPriv": 0,
       "cum": 86
     },
     {
       "w": "2023-06-18",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 86,
+      "cumPriv": 0,
       "cum": 86
     },
     {
       "w": "2023-06-25",
+      "pub": 13,
+      "priv": 0,
       "c": 13,
+      "cumPub": 99,
+      "cumPriv": 0,
       "cum": 99
     },
     {
       "w": "2023-07-02",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 101,
+      "cumPriv": 0,
       "cum": 101
     },
     {
       "w": "2023-07-09",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 101,
+      "cumPriv": 0,
       "cum": 101
     },
     {
       "w": "2023-07-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 101,
+      "cumPriv": 0,
       "cum": 101
     },
     {
       "w": "2023-07-23",
+      "pub": 18,
+      "priv": 0,
       "c": 18,
+      "cumPub": 119,
+      "cumPriv": 0,
       "cum": 119
     },
     {
       "w": "2023-07-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 119,
+      "cumPriv": 0,
       "cum": 119
     },
     {
       "w": "2023-08-06",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 119,
+      "cumPriv": 0,
       "cum": 119
     },
     {
       "w": "2023-08-13",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 119,
+      "cumPriv": 0,
       "cum": 119
     },
     {
       "w": "2023-08-20",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 121,
+      "cumPriv": 0,
       "cum": 121
     },
     {
       "w": "2023-08-27",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 121,
+      "cumPriv": 0,
       "cum": 121
     },
     {
       "w": "2023-09-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 121,
+      "cumPriv": 0,
       "cum": 121
     },
     {
       "w": "2023-09-10",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 124,
+      "cumPriv": 0,
       "cum": 124
     },
     {
       "w": "2023-09-17",
+      "pub": 5,
+      "priv": 0,
       "c": 5,
+      "cumPub": 129,
+      "cumPriv": 0,
       "cum": 129
     },
     {
       "w": "2023-09-24",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 132,
+      "cumPriv": 0,
       "cum": 132
     },
     {
       "w": "2023-10-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 132,
+      "cumPriv": 0,
       "cum": 132
     },
     {
       "w": "2023-10-08",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 133,
+      "cumPriv": 0,
       "cum": 133
     },
     {
       "w": "2023-10-15",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 133,
+      "cumPriv": 0,
       "cum": 133
     },
     {
       "w": "2023-10-22",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 133,
+      "cumPriv": 0,
       "cum": 133
     },
     {
       "w": "2023-10-29",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-11-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-11-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-11-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-11-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-12-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-12-10",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-12-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-12-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2023-12-31",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 134,
+      "cumPriv": 0,
       "cum": 134
     },
     {
       "w": "2024-01-07",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 136,
+      "cumPriv": 0,
       "cum": 136
     },
     {
       "w": "2024-01-14",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 136,
+      "cumPriv": 0,
       "cum": 136
     },
     {
       "w": "2024-01-21",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 136,
+      "cumPriv": 0,
       "cum": 136
     },
     {
       "w": "2024-01-28",
+      "pub": 5,
+      "priv": 0,
       "c": 5,
+      "cumPub": 141,
+      "cumPriv": 0,
       "cum": 141
     },
     {
       "w": "2024-02-04",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 142,
+      "cumPriv": 0,
       "cum": 142
     },
     {
       "w": "2024-02-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 142,
+      "cumPriv": 0,
       "cum": 142
     },
     {
       "w": "2024-02-18",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 146,
+      "cumPriv": 0,
       "cum": 146
     },
     {
       "w": "2024-02-25",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 147,
+      "cumPriv": 0,
       "cum": 147
     },
     {
       "w": "2024-03-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 147,
+      "cumPriv": 0,
       "cum": 147
     },
     {
       "w": "2024-03-10",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 147,
+      "cumPriv": 0,
       "cum": 147
     },
     {
       "w": "2024-03-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 147,
+      "cumPriv": 0,
       "cum": 147
     },
     {
       "w": "2024-03-24",
+      "pub": 10,
+      "priv": 0,
       "c": 10,
+      "cumPub": 157,
+      "cumPriv": 0,
       "cum": 157
     },
     {
       "w": "2024-03-31",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 157,
+      "cumPriv": 0,
       "cum": 157
     },
     {
       "w": "2024-04-07",
+      "pub": 16,
+      "priv": 0,
       "c": 16,
+      "cumPub": 173,
+      "cumPriv": 0,
       "cum": 173
     },
     {
       "w": "2024-04-14",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 173,
+      "cumPriv": 0,
       "cum": 173
     },
     {
       "w": "2024-04-21",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 173,
+      "cumPriv": 0,
       "cum": 173
     },
     {
       "w": "2024-04-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 173,
+      "cumPriv": 0,
       "cum": 173
     },
     {
       "w": "2024-05-05",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 174,
+      "cumPriv": 0,
       "cum": 174
     },
     {
       "w": "2024-05-12",
+      "pub": 9,
+      "priv": 0,
       "c": 9,
+      "cumPub": 183,
+      "cumPriv": 0,
       "cum": 183
     },
     {
       "w": "2024-05-19",
+      "pub": 7,
+      "priv": 0,
       "c": 7,
+      "cumPub": 190,
+      "cumPriv": 0,
       "cum": 190
     },
     {
       "w": "2024-05-26",
+      "pub": 5,
+      "priv": 0,
       "c": 5,
+      "cumPub": 195,
+      "cumPriv": 0,
       "cum": 195
     },
     {
       "w": "2024-06-02",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 196,
+      "cumPriv": 0,
       "cum": 196
     },
     {
       "w": "2024-06-09",
+      "pub": 5,
+      "priv": 0,
       "c": 5,
+      "cumPub": 201,
+      "cumPriv": 0,
       "cum": 201
     },
     {
       "w": "2024-06-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 201,
+      "cumPriv": 0,
       "cum": 201
     },
     {
       "w": "2024-06-23",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 201,
+      "cumPriv": 0,
       "cum": 201
     },
     {
       "w": "2024-06-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 201,
+      "cumPriv": 0,
       "cum": 201
     },
     {
       "w": "2024-07-07",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 201,
+      "cumPriv": 0,
       "cum": 201
     },
     {
       "w": "2024-07-14",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 201,
+      "cumPriv": 0,
       "cum": 201
     },
     {
       "w": "2024-07-21",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 202,
+      "cumPriv": 0,
       "cum": 202
     },
     {
       "w": "2024-07-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 202,
+      "cumPriv": 0,
       "cum": 202
     },
     {
       "w": "2024-08-04",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 202,
+      "cumPriv": 0,
       "cum": 202
     },
     {
       "w": "2024-08-11",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 202,
+      "cumPriv": 0,
       "cum": 202
     },
     {
       "w": "2024-08-18",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 202,
+      "cumPriv": 0,
       "cum": 202
     },
     {
       "w": "2024-08-25",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 204,
+      "cumPriv": 0,
       "cum": 204
     },
     {
       "w": "2024-09-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 204,
+      "cumPriv": 0,
       "cum": 204
     },
     {
       "w": "2024-09-08",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 204,
+      "cumPriv": 0,
       "cum": 204
     },
     {
       "w": "2024-09-15",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 208,
+      "cumPriv": 0,
       "cum": 208
     },
     {
       "w": "2024-09-22",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 210,
+      "cumPriv": 0,
       "cum": 210
     },
     {
       "w": "2024-09-29",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 210,
+      "cumPriv": 0,
       "cum": 210
     },
     {
       "w": "2024-10-06",
+      "pub": 6,
+      "priv": 0,
       "c": 6,
+      "cumPub": 216,
+      "cumPriv": 0,
       "cum": 216
     },
     {
       "w": "2024-10-13",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 217,
+      "cumPriv": 0,
       "cum": 217
     },
     {
       "w": "2024-10-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 217,
+      "cumPriv": 0,
       "cum": 217
     },
     {
       "w": "2024-10-27",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 220,
+      "cumPriv": 0,
       "cum": 220
     },
     {
       "w": "2024-11-03",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 223,
+      "cumPriv": 0,
       "cum": 223
     },
     {
       "w": "2024-11-10",
+      "pub": 6,
+      "priv": 0,
       "c": 6,
+      "cumPub": 229,
+      "cumPriv": 0,
       "cum": 229
     },
     {
       "w": "2024-11-17",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2024-11-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2024-12-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2024-12-08",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2024-12-15",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2024-12-22",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2024-12-29",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 230,
+      "cumPriv": 0,
       "cum": 230
     },
     {
       "w": "2025-01-05",
+      "pub": 11,
+      "priv": 0,
       "c": 11,
+      "cumPub": 241,
+      "cumPriv": 0,
       "cum": 241
     },
     {
       "w": "2025-01-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 241,
+      "cumPriv": 0,
       "cum": 241
     },
     {
       "w": "2025-01-19",
+      "pub": 19,
+      "priv": 0,
       "c": 19,
+      "cumPub": 260,
+      "cumPriv": 0,
       "cum": 260
     },
     {
       "w": "2025-01-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 260,
+      "cumPriv": 0,
       "cum": 260
     },
     {
       "w": "2025-02-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 260,
+      "cumPriv": 0,
       "cum": 260
     },
     {
       "w": "2025-02-09",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 262,
+      "cumPriv": 0,
       "cum": 262
     },
     {
       "w": "2025-02-16",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 265,
+      "cumPriv": 0,
       "cum": 265
     },
     {
       "w": "2025-02-23",
+      "pub": 10,
+      "priv": 0,
       "c": 10,
+      "cumPub": 275,
+      "cumPriv": 0,
       "cum": 275
     },
     {
       "w": "2025-03-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 275,
+      "cumPriv": 0,
       "cum": 275
     },
     {
       "w": "2025-03-09",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 275,
+      "cumPriv": 0,
       "cum": 275
     },
     {
       "w": "2025-03-16",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 275,
+      "cumPriv": 0,
       "cum": 275
     },
     {
       "w": "2025-03-23",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 275,
+      "cumPriv": 0,
       "cum": 275
     },
     {
       "w": "2025-03-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 275,
+      "cumPriv": 0,
       "cum": 275
     },
     {
       "w": "2025-04-06",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 277,
+      "cumPriv": 0,
       "cum": 277
     },
     {
       "w": "2025-04-13",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 279,
+      "cumPriv": 0,
       "cum": 279
     },
     {
       "w": "2025-04-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 279,
+      "cumPriv": 0,
       "cum": 279
     },
     {
       "w": "2025-04-27",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 279,
+      "cumPriv": 0,
       "cum": 279
     },
     {
       "w": "2025-05-04",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 283,
+      "cumPriv": 0,
       "cum": 283
     },
     {
       "w": "2025-05-11",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 286,
+      "cumPriv": 0,
       "cum": 286
     },
     {
       "w": "2025-05-18",
+      "pub": 7,
+      "priv": 0,
       "c": 7,
+      "cumPub": 293,
+      "cumPriv": 0,
       "cum": 293
     },
     {
       "w": "2025-05-25",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 297,
+      "cumPriv": 0,
       "cum": 297
     },
     {
       "w": "2025-06-01",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 301,
+      "cumPriv": 0,
       "cum": 301
     },
     {
       "w": "2025-06-08",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 304,
+      "cumPriv": 0,
       "cum": 304
     },
     {
       "w": "2025-06-15",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 306,
+      "cumPriv": 0,
       "cum": 306
     },
     {
       "w": "2025-06-22",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 306,
+      "cumPriv": 0,
       "cum": 306
     },
     {
       "w": "2025-06-29",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 306,
+      "cumPriv": 0,
       "cum": 306
     },
     {
       "w": "2025-07-06",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 307,
+      "cumPriv": 0,
       "cum": 307
     },
     {
       "w": "2025-07-13",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 307,
+      "cumPriv": 0,
       "cum": 307
     },
     {
       "w": "2025-07-20",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 307,
+      "cumPriv": 0,
       "cum": 307
     },
     {
       "w": "2025-07-27",
+      "pub": 8,
+      "priv": 0,
       "c": 8,
+      "cumPub": 315,
+      "cumPriv": 0,
       "cum": 315
     },
     {
       "w": "2025-08-03",
+      "pub": 5,
+      "priv": 0,
       "c": 5,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-08-10",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-08-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-08-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-08-31",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-09-07",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-09-14",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 320,
+      "cumPriv": 0,
       "cum": 320
     },
     {
       "w": "2025-09-21",
+      "pub": 8,
+      "priv": 0,
       "c": 8,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-09-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-10-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-10-12",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-10-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-10-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-11-02",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 328,
+      "cumPriv": 0,
       "cum": 328
     },
     {
       "w": "2025-11-09",
+      "pub": 3,
+      "priv": 0,
       "c": 3,
+      "cumPub": 331,
+      "cumPriv": 0,
       "cum": 331
     },
     {
       "w": "2025-11-16",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 332,
+      "cumPriv": 0,
       "cum": 332
     },
     {
       "w": "2025-11-23",
+      "pub": 6,
+      "priv": 0,
       "c": 6,
+      "cumPub": 338,
+      "cumPriv": 0,
       "cum": 338
     },
     {
       "w": "2025-11-30",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 338,
+      "cumPriv": 0,
       "cum": 338
     },
     {
       "w": "2025-12-07",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 339,
+      "cumPriv": 0,
       "cum": 339
     },
     {
       "w": "2025-12-14",
+      "pub": 34,
+      "priv": 0,
       "c": 34,
+      "cumPub": 373,
+      "cumPriv": 0,
       "cum": 373
     },
     {
       "w": "2025-12-21",
+      "pub": 45,
+      "priv": 0,
       "c": 45,
+      "cumPub": 418,
+      "cumPriv": 0,
       "cum": 418
     },
     {
       "w": "2025-12-28",
+      "pub": 19,
+      "priv": 0,
       "c": 19,
+      "cumPub": 437,
+      "cumPriv": 0,
       "cum": 437
     },
     {
       "w": "2026-01-04",
+      "pub": 6,
+      "priv": 0,
       "c": 6,
+      "cumPub": 443,
+      "cumPriv": 0,
       "cum": 443
     },
     {
       "w": "2026-01-11",
+      "pub": 6,
+      "priv": 0,
       "c": 6,
+      "cumPub": 449,
+      "cumPriv": 0,
       "cum": 449
     },
     {
       "w": "2026-01-18",
+      "pub": 5,
+      "priv": 0,
       "c": 5,
+      "cumPub": 454,
+      "cumPriv": 0,
       "cum": 454
     },
     {
       "w": "2026-01-25",
+      "pub": 25,
+      "priv": 0,
       "c": 25,
+      "cumPub": 479,
+      "cumPriv": 0,
       "cum": 479
     },
     {
       "w": "2026-02-01",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 479,
+      "cumPriv": 0,
       "cum": 479
     },
     {
       "w": "2026-02-08",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 479,
+      "cumPriv": 0,
       "cum": 479
     },
     {
       "w": "2026-02-15",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 480,
+      "cumPriv": 0,
       "cum": 480
     },
     {
       "w": "2026-02-22",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 481,
+      "cumPriv": 0,
       "cum": 481
     },
     {
       "w": "2026-03-01",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 482,
+      "cumPriv": 0,
       "cum": 482
     },
     {
       "w": "2026-03-08",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 483,
+      "cumPriv": 0,
       "cum": 483
     },
     {
       "w": "2026-03-15",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 483,
+      "cumPriv": 0,
       "cum": 483
     },
     {
       "w": "2026-03-22",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 483,
+      "cumPriv": 0,
       "cum": 483
     },
     {
       "w": "2026-03-29",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 483,
+      "cumPriv": 0,
       "cum": 483
     },
     {
       "w": "2026-04-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 483,
+      "cumPriv": 0,
       "cum": 483
     },
     {
       "w": "2026-04-12",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 485,
+      "cumPriv": 0,
       "cum": 485
     },
     {
       "w": "2026-04-19",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 486,
+      "cumPriv": 0,
       "cum": 486
     },
     {
       "w": "2026-04-26",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 486,
+      "cumPriv": 0,
       "cum": 486
     },
     {
       "w": "2026-05-03",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 486,
+      "cumPriv": 0,
       "cum": 486
     },
     {
       "w": "2026-05-10",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 490,
+      "cumPriv": 0,
       "cum": 490
     },
     {
       "w": "2026-05-17",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 490,
+      "cumPriv": 0,
       "cum": 490
     },
     {
       "w": "2026-05-24",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 490,
+      "cumPriv": 0,
       "cum": 490
     },
     {
       "w": "2026-05-31",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 490,
+      "cumPriv": 0,
       "cum": 490
     },
     {
       "w": "2026-06-07",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 491,
+      "cumPriv": 0,
       "cum": 491
     },
     {
       "w": "2026-06-14",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 492,
+      "cumPriv": 0,
       "cum": 492
     },
     {
       "w": "2026-06-21",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 494,
+      "cumPriv": 0,
       "cum": 494
     },
     {
       "w": "2026-06-28",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 494,
+      "cumPriv": 0,
       "cum": 494
     },
     {
       "w": "2026-07-05",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 494,
+      "cumPriv": 0,
       "cum": 494
     },
     {
       "w": "2026-07-12",
+      "pub": 4,
+      "priv": 0,
       "c": 4,
+      "cumPub": 498,
+      "cumPriv": 0,
       "cum": 498
     },
     {
       "w": "2026-07-19",
+      "pub": 0,
+      "priv": 0,
       "c": 0,
+      "cumPub": 498,
+      "cumPriv": 0,
       "cum": 498
     },
     {
       "w": "2026-07-26",
+      "pub": 2,
+      "priv": 0,
       "c": 2,
+      "cumPub": 500,
+      "cumPriv": 0,
       "cum": 500
     },
     {
       "w": "2026-08-02",
+      "pub": 1,
+      "priv": 0,
       "c": 1,
+      "cumPub": 501,
+      "cumPriv": 0,
       "cum": 501
     }
   ],
   "repos": [
     {
+      "homepage": "https://the-follow-up.vercel.app",
       "name": "The-FollowUp",
       "url": "https://github.com/Bytestorm5/The-FollowUp",
-      "homepage": "https://the-follow-up.vercel.app",
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 116,
       "firstWeek": "2025-12-07",
-      "lastWeek": "2026-02-15",
-      "private": false
+      "lastWeek": "2026-02-15"
     },
     {
+      "homepage": "https://galaxy-gen-three.vercel.app",
       "name": "GalaxyGen",
       "url": "https://github.com/Bytestorm5/GalaxyGen",
-      "homepage": "https://galaxy-gen-three.vercel.app",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
       "commits": 83,
       "firstWeek": "2021-05-09",
-      "lastWeek": "2026-01-25",
-      "private": false
+      "lastWeek": "2026-01-25"
     },
     {
+      "homepage": null,
       "name": "PortfolioSite",
       "url": "https://github.com/Bytestorm5/PortfolioSite",
-      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
       "commits": 46,
       "firstWeek": "2024-03-24",
-      "lastWeek": "2026-04-12",
-      "private": false
+      "lastWeek": "2026-04-12"
     },
     {
+      "homepage": null,
       "name": "Buckshot-Roulette-Python",
       "url": "https://github.com/Bytestorm5/Buckshot-Roulette-Python",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 6,
       "commits": 31,
       "firstWeek": "2024-01-28",
-      "lastWeek": "2024-11-17",
-      "private": false
+      "lastWeek": "2024-11-17"
     },
     {
+      "homepage": null,
       "name": "BetterMCStats",
       "url": "https://github.com/Bytestorm5/BetterMCStats",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 1,
       "commits": 24,
       "firstWeek": "2021-11-07",
-      "lastWeek": "2024-06-09",
-      "private": false
+      "lastWeek": "2024-06-09"
     },
     {
+      "homepage": null,
       "name": "UTTT-Code-Tournament",
       "url": "https://github.com/Bytestorm5/UTTT-Code-Tournament",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 21,
       "firstWeek": "2023-07-23",
-      "lastWeek": "2024-06-09",
-      "private": false
+      "lastWeek": "2024-06-09"
     },
     {
+      "homepage": null,
       "name": "Bytestorm5",
       "url": "https://github.com/Bytestorm5/Bytestorm5",
-      "homepage": null,
       "description": null,
       "language": null,
       "stars": 0,
       "commits": 19,
       "firstWeek": "2023-04-30",
-      "lastWeek": "2026-07-12",
-      "private": false
+      "lastWeek": "2026-07-12"
     },
     {
+      "homepage": null,
       "name": "EconomyGame",
       "url": "https://github.com/Bytestorm5/EconomyGame",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 19,
       "firstWeek": "2025-04-13",
-      "lastWeek": "2025-08-03",
-      "private": false
+      "lastWeek": "2025-08-03"
     },
     {
+      "homepage": null,
       "name": "al-asl-frontend",
       "url": "https://github.com/Bytestorm5/al-asl-frontend",
-      "homepage": null,
       "description": null,
       "language": "TypeScript",
       "stars": 0,
       "commits": 17,
       "firstWeek": "2025-01-19",
-      "lastWeek": "2025-02-23",
-      "private": false
+      "lastWeek": "2025-02-23"
     },
     {
+      "homepage": null,
       "name": "Whitehouse-Watcher",
       "url": "https://github.com/Bytestorm5/Whitehouse-Watcher",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 17,
       "firstWeek": "2025-01-19",
-      "lastWeek": "2025-01-19",
-      "private": false
+      "lastWeek": "2025-01-19"
     },
     {
+      "homepage": null,
       "name": "NJIT-Course-Update",
       "url": "https://github.com/Bytestorm5/NJIT-Course-Update",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 15,
       "firstWeek": "2023-06-25",
-      "lastWeek": "2024-01-07",
-      "private": false
+      "lastWeek": "2024-01-07"
     },
     {
+      "homepage": null,
       "name": "YWCC-RG-Bot",
       "url": "https://github.com/Bytestorm5/YWCC-RG-Bot",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 12,
       "firstWeek": "2024-05-05",
-      "lastWeek": "2024-08-25",
-      "private": false
+      "lastWeek": "2024-08-25"
     },
     {
+      "homepage": null,
       "name": "Al-Asl-TempLanding",
       "url": "https://github.com/Bytestorm5/Al-Asl-TempLanding",
-      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
       "commits": 11,
       "firstWeek": "2025-01-05",
-      "lastWeek": "2025-01-05",
-      "private": false
+      "lastWeek": "2025-01-05"
     },
     {
+      "homepage": null,
       "name": "News-Bot",
       "url": "https://github.com/Bytestorm5/News-Bot",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 10,
       "firstWeek": "2025-05-18",
-      "lastWeek": "2025-05-25",
-      "private": false
+      "lastWeek": "2025-05-25"
     },
     {
+      "homepage": null,
       "name": "VidTranscriptionTool",
       "url": "https://github.com/Bytestorm5/VidTranscriptionTool",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 10,
       "firstWeek": "2024-09-15",
-      "lastWeek": "2024-11-10",
-      "private": false
+      "lastWeek": "2024-11-10"
     },
     {
+      "homepage": null,
       "name": "CS492-WRF",
       "url": "https://github.com/Bytestorm5/CS492-WRF",
-      "homepage": null,
       "description": null,
       "language": "Shell",
       "stars": 0,
       "commits": 9,
       "firstWeek": "2023-09-10",
-      "lastWeek": "2024-02-18",
-      "private": false
+      "lastWeek": "2024-02-18"
     },
     {
+      "homepage": null,
       "name": "Buckshot-RL",
       "url": "https://github.com/Bytestorm5/Buckshot-RL",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 7,
       "firstWeek": "2024-09-22",
-      "lastWeek": "2024-10-06",
-      "private": false
+      "lastWeek": "2024-10-06"
     },
     {
+      "homepage": null,
       "name": "wargame-bot",
       "url": "https://github.com/Bytestorm5/wargame-bot",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 4,
       "firstWeek": "2026-05-10",
-      "lastWeek": "2026-05-10",
-      "private": false
+      "lastWeek": "2026-05-10"
     },
     {
+      "homepage": null,
       "name": "Project-Time-Tracker",
       "url": "https://github.com/Bytestorm5/Project-Time-Tracker",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 4,
       "firstWeek": "2025-05-18",
-      "lastWeek": "2025-07-06",
-      "private": false
+      "lastWeek": "2025-07-06"
     },
     {
+      "homepage": null,
       "name": "SIG-AI-Workshop-Stocks",
       "url": "https://github.com/Bytestorm5/SIG-AI-Workshop-Stocks",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 4,
       "firstWeek": "2023-09-17",
-      "lastWeek": "2023-09-17",
-      "private": false
+      "lastWeek": "2023-09-17"
     },
     {
+      "homepage": null,
       "name": "AlgoBlocker",
       "url": "https://github.com/Bytestorm5/AlgoBlocker",
-      "homepage": null,
       "description": null,
       "language": "JavaScript",
       "stars": 0,
       "commits": 3,
       "firstWeek": "2025-06-01",
-      "lastWeek": "2025-06-01",
-      "private": false
+      "lastWeek": "2025-06-01"
     },
     {
+      "homepage": null,
       "name": "FeedbackTemp",
       "url": "https://github.com/Bytestorm5/FeedbackTemp",
-      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
       "commits": 3,
       "firstWeek": "2025-05-04",
-      "lastWeek": "2025-05-04",
-      "private": false
+      "lastWeek": "2025-05-04"
     },
     {
+      "homepage": "https://serverless-mailer-rho.vercel.app",
       "name": "ServerlessMailer",
       "url": "https://github.com/Bytestorm5/ServerlessMailer",
-      "homepage": "https://serverless-mailer-rho.vercel.app",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
       "commits": 2,
       "firstWeek": "2026-07-26",
-      "lastWeek": "2026-07-26",
-      "private": false
+      "lastWeek": "2026-07-26"
     },
     {
+      "homepage": null,
       "name": "Live-Search",
       "url": "https://github.com/Bytestorm5/Live-Search",
-      "homepage": null,
       "description": null,
       "language": "TypeScript",
       "stars": 0,
       "commits": 2,
       "firstWeek": "2026-06-21",
-      "lastWeek": "2026-06-21",
-      "private": false
+      "lastWeek": "2026-06-21"
     },
     {
+      "homepage": null,
       "name": "MC-Netro-Planner",
       "url": "https://github.com/Bytestorm5/MC-Netro-Planner",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 2,
       "firstWeek": "2026-02-22",
-      "lastWeek": "2026-03-08",
-      "private": false
+      "lastWeek": "2026-03-08"
     },
     {
+      "homepage": null,
       "name": "MsgCountPlus",
       "url": "https://github.com/Bytestorm5/MsgCountPlus",
-      "homepage": null,
       "description": "A statistics bot that tracks and graphs activity of discord chats. This code was not meant to be viewed by anyone else, so excuse some of the messy code / lack of comments.",
       "language": "C#",
       "stars": 0,
       "commits": 2,
       "firstWeek": "2021-02-21",
-      "lastWeek": "2024-06-09",
-      "private": false
+      "lastWeek": "2024-06-09"
     },
     {
+      "homepage": null,
       "name": "DMR-Search",
       "url": "https://github.com/Bytestorm5/DMR-Search",
-      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
       "commits": 2,
       "firstWeek": "2023-02-12",
-      "lastWeek": "2023-02-12",
-      "private": false
+      "lastWeek": "2023-02-12"
     },
     {
+      "homepage": null,
       "name": "Portfolio-v3",
       "url": "https://github.com/Bytestorm5/Portfolio-v3",
-      "homepage": null,
       "description": null,
       "language": null,
       "stars": 0,
       "commits": 1,
       "firstWeek": "2026-08-02",
-      "lastWeek": "2026-08-02",
-      "private": false
+      "lastWeek": "2026-08-02"
     },
     {
+      "homepage": "https://stellaris-mod-utils.vercel.app",
       "name": "Stellaris-Mod-Utils",
       "url": "https://github.com/Bytestorm5/Stellaris-Mod-Utils",
-      "homepage": "https://stellaris-mod-utils.vercel.app",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
       "commits": 1,
       "firstWeek": "2026-06-14",
-      "lastWeek": "2026-06-14",
-      "private": false
+      "lastWeek": "2026-06-14"
     },
     {
+      "homepage": null,
       "name": "EconomyGame-2",
       "url": "https://github.com/Bytestorm5/EconomyGame-2",
-      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
       "commits": 1,
       "firstWeek": "2026-06-07",
-      "lastWeek": "2026-06-07",
-      "private": false
+      "lastWeek": "2026-06-07"
     },
     {
+      "homepage": null,
       "name": "dep-analyzer",
       "url": "https://github.com/Bytestorm5/dep-analyzer",
-      "homepage": null,
       "description": null,
       "language": null,
       "stars": 1,
       "commits": 1,
       "firstWeek": "2026-04-19",
-      "lastWeek": "2026-04-19",
-      "private": false
+      "lastWeek": "2026-04-19"
     },
     {
+      "homepage": null,
       "name": "BacktrackLM",
       "url": "https://github.com/Bytestorm5/BacktrackLM",
-      "homepage": null,
       "description": null,
       "language": null,
       "stars": 0,
       "commits": 1,
       "firstWeek": "2025-06-08",
-      "lastWeek": "2025-06-08",
-      "private": false
+      "lastWeek": "2025-06-08"
     },
     {
+      "homepage": null,
       "name": "CubeComp_Finder",
       "url": "https://github.com/Bytestorm5/CubeComp_Finder",
-      "homepage": null,
       "description": "A script that locates and filters Rubik's Cube Competitions based on distance.",
       "language": "Python",
       "stars": 1,
       "commits": 1,
       "firstWeek": "2021-02-21",
-      "lastWeek": "2021-02-21",
-      "private": false
+      "lastWeek": "2021-02-21"
     }
   ]
 }

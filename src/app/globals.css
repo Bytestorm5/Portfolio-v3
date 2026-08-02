@@ -26,11 +26,13 @@
   --accent: #2ad7d7;
   --accent-dim: #00bdbe;
 
-  /* Chart tokens. --series-1 sits inside the dark lightness band
-     (OKLCH L 0.62) and clears 3:1 contrast against --surface-1, so it stays
-     legible as a data mark. --accent is UI chrome only and is not held to
+  /* Chart tokens. Both series sit inside the dark lightness band and clear
+     3:1 against --surface-1; the pair separates at ΔE 28 for normal vision
+     and 16 under deuteranopia, so public vs private stays readable without
+     relying on hue alone. --accent is UI chrome only and is not held to
      that bar. */
   --series-1: #00a5a6;
+  --series-2: #d95926;
   --gridline: #2c3238;
   --axis: #3b424a;
 
@@ -54,6 +56,7 @@
   --color-accent: var(--accent);
   --color-accent-dim: var(--accent-dim);
   --color-series-1: var(--series-1);
+  --color-series-2: var(--series-2);
   --color-gridline: var(--gridline);
   --color-hairline: var(--border);
   --font-mono: var(--font-mono);
@@ -125,6 +128,39 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ---- Typing caret ----------------------------------------------------- */
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 0.85;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+.typing-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 1px;
+  vertical-align: -0.14em;
+  background: currentColor;
+  animation: caret-blink 1.1s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-caret {
+    animation: none;
+    opacity: 0.85;
   }
 }
 

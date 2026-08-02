@@ -10,7 +10,7 @@ export async function GET() {
 
   if (!metrics) {
     return NextResponse.json(
-      { error: "No snapshot yet. Run the collection workflow." },
+      { error: "No snapshot yet. Hit /api/metrics/collect to build one." },
       { status: 503 },
     );
   }

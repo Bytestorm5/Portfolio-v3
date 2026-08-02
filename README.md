@@ -1,52 +1,88 @@
 # Portfolio v3
 
 Next.js rebuild of [PortfolioSite](https://github.com/Bytestorm5/PortfolioSite) (Flask).
-Two pages — a home page aimed at employers, and a projects page — plus a live GitHub
-activity graph that collects its own data.
+Two pages — a home page aimed at employers, and a projects page — with a live GitHub
+activity chart in the hero that collects its own data.
 
 ## Stack
 
 - Next.js 16 (App Router) · TypeScript · Tailwind CSS v4
-- No charting library: the commit graph is hand-rolled SVG (see `src/components/CommitChart.tsx`)
+- anime.js for the typewriter tagline and the heading reveal
+- No charting library: the commit graph is hand-rolled SVG (`src/components/CommitChart.tsx`)
 - System monospace throughout, carrying over the v2 look
 
 ## Live metrics
 
-The "Live activity" section on the home page is fed by a snapshot at
-`data/github-metrics.json`, produced by `scripts/collect-github-metrics.mjs`:
+The hero panel is fed by a snapshot produced by `src/lib/collector.ts`:
 
-1. Lists every non-fork public repo owned by the user.
+1. Lists every non-fork repo the user owns. When the token belongs to that user it
+   asks via `/user/repos`, which includes private repositories; otherwise it falls
+   back to the public-only `/users/{user}/repos`.
 2. Calls `/repos/{owner}/{repo}/stats/contributors` for each — that endpoint returns
    a contributor's **entire** history bucketed by week, so one request per repo
    reconstructs the full timeline without walking commits. It answers `202` while
-   GitHub warms the cache, so the script retries with backoff.
-3. Keeps only commits authored by the user, sums the weekly buckets across repos,
-   and fills in the quiet weeks so the x-axis stays real time rather than
+   GitHub warms the cache, so the collector retries with backoff.
+3. Keeps only commits authored by the user, splits each week into public and private
+   buckets, and fills in the quiet weeks so the x-axis stays real time rather than
    collapsing gaps.
-4. Writes totals, the weekly series, and a per-repo breakdown.
 
-`.github/workflows/collect-metrics.yml` runs this daily and commits the snapshot back
-when the data actually changed — the `generatedAt` timestamp alone is ignored, so
-quiet days don't produce empty commits.
+**Private repositories are counted but never named.** Only their commit totals reach
+the snapshot — no name, URL, or description — so the public/private split can be shown
+without leaking anything.
 
-### Running it manually
+### The collection endpoint
+
+`POST` (or `GET`) `/api/metrics/collect`, meant to be driven by cron:
 
 ```bash
-GITHUB_TOKEN=<a token> npm run metrics
+curl -X POST -H "Authorization: Bearer $METRICS_CRON_SECRET" \
+  https://kamilarif.com/api/metrics/collect
 ```
+
+It is **idempotent within a window**: if the stored snapshot is younger than
+`METRICS_MIN_INTERVAL_HOURS` (default 20), the request is a no-op that reports the
+current state and when the next collection is allowed:
+
+```json
+{ "status": "skipped", "reason": "within minimum collection interval",
+  "generatedAt": "…", "ageSeconds": 151, "nextEligibleAt": "…" }
+```
+
+So a stray, retried, or duplicated request cannot pull the cadence forward or
+double-write the snapshot. Add `?force=1` to override the window deliberately.
+Concurrent requests share a single in-flight collection rather than each starting
+their own, and a failed collection leaves the previous snapshot in place — the site
+keeps serving the last good data and the response says so.
 
 | Env var | Purpose |
 | --- | --- |
-| `METRICS_GITHUB_TOKEN` / `GITHUB_TOKEN` | Auth. Without one you get 60 requests/hour, which is not enough. |
+| `METRICS_CRON_SECRET` / `CRON_SECRET` | Bearer token the endpoint requires. Without one set, the endpoint refuses to run in production. |
+| `METRICS_GITHUB_TOKEN` / `GITHUB_TOKEN` | GitHub auth. Needs `repo` scope to see private repos. |
 | `METRICS_USER` | Defaults to `Bytestorm5`. |
-| `METRICS_REPOS` | Comma-separated list to pin collection to specific repos instead of discovering all of them. |
-| `METRICS_INCLUDE_PRIVATE=1` | Include private repos (needs a PAT with `repo`). Off by default so no repo name leaks onto the public site. |
+| `METRICS_MIN_INTERVAL_HOURS` | Idempotency window. Default 20. |
+| `METRICS_DATA_DIR` | Where the snapshot is written. Defaults to `data/`. |
 
-The snapshot is also served at `/api/metrics`.
+The snapshot itself is served at `/api/metrics`.
+
+### Running it locally
+
+```bash
+GITHUB_TOKEN=<token> npm run metrics                       # collect everything
+METRICS_REPOS=PortfolioSite,Portfolio-v3 npm run metrics    # pin to specific repos
+```
+
+### Persistence
+
+The collector writes to `METRICS_DATA_DIR` (default `data/`), and falls back to the
+snapshot committed in `data/` until a collection has run. That works directly for the
+container deployment — mount a volume at `data/` to keep snapshots across restarts.
+On a platform with a read-only or ephemeral filesystem, point `METRICS_DATA_DIR` at
+durable storage, or the endpoint will re-collect on each cold instance.
 
 > **Note:** the committed snapshot currently only covers `PortfolioSite` and
-> `Portfolio-v3` — it was seeded from an environment whose GitHub credential was
-> scoped to those two repos. The first workflow run replaces it with the full set.
+> `Portfolio-v3`, and shows no private commits — it was seeded from an environment
+> whose GitHub credential was scoped to those two repos. The first real collection
+> replaces it.
 
 ## Development
 
@@ -59,19 +95,22 @@ npm run lint
 
 ## Deployment
 
-Works as-is on Vercel. The `Dockerfile` builds a standalone image for the
-container-to-droplet path the v2 site used; note it copies `data/` into the image,
-since the snapshot is read at runtime.
+Works as-is on Vercel (add a Vercel Cron entry pointing at `/api/metrics/collect`;
+it sends `Authorization: Bearer $CRON_SECRET`, which the endpoint accepts). The
+`Dockerfile` builds a standalone image for the container-to-droplet path v2 used;
+note it copies `data/` into the image, since the snapshot is read at runtime.
 
 ## Layout
 
 ```
-data/github-metrics.json   collected snapshot (committed)
-scripts/                   the collector
-src/app/                   routes: /, /projects, /api/metrics
-src/components/            chart, cards, header/footer, rotator
+data/github-metrics.json   collected snapshot (committed as a seed)
+scripts/collect.mjs        CLI wrapper around the collector
+src/app/                   routes: /, /projects, /api/metrics[/collect]
+src/components/            chart, metric carousel, cards, header/footer, rotator
 src/data/                  résumé content — experience, projects, profile
-src/lib/                   snapshot loader + formatters
+src/lib/                   collector, snapshot store, formatters
 ```
 
 Content lives in `src/data/*.ts`, so updating the résumé means editing data, not JSX.
+The hero panel is a `MetricCarousel`; adding a second metric means appending a slide
+in `src/components/HeroMetrics.tsx` — the picker appears once there is more than one.

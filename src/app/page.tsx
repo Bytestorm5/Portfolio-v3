@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Card from "@/components/Card";
 import Rotator from "@/components/Rotator";
-import LiveMetrics from "@/components/LiveMetrics";
-import { awards, education, impact, profile, skills } from "@/data/profile";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import HeroMetrics from "@/components/HeroMetrics";
+import { profile } from "@/data/profile";
 import { experience } from "@/data/experience";
 import { featured } from "@/data/projects";
 
@@ -13,69 +14,48 @@ export const revalidate = 3600;
 export default function HomePage() {
   return (
     <div className="flex flex-col gap-16 py-10 sm:gap-20 sm:py-14">
-      {/* ---- Hero ------------------------------------------------------ */}
-      <section>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-          {profile.name}.
-        </h1>
-        <p className="mt-3 text-lg text-[var(--text-secondary)] sm:text-xl">
-          Need <Rotator phrases={profile.taglines} />
-        </p>
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
-          {profile.summary}
-        </p>
+      {/* ---- Hero: pitch on the left, live metrics on the right --------- */}
+      <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10">
+        <div>
+          <AnimatedHeading
+            text="Kamil Arif."
+            className="text-4xl font-bold tracking-tight sm:text-6xl"
+          />
+          <p className="mt-3 text-lg text-[var(--text-secondary)] sm:text-xl">
+            Need <Rotator phrases={profile.taglines} />
+          </p>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-[var(--text-secondary)]">
+            {profile.summary}
+          </p>
 
-        <div className="mt-7 flex flex-wrap gap-3">
-          <a
-            href={`mailto:${profile.links.email}`}
-            className="rounded-lg bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-[#062023] no-underline transition-opacity hover:opacity-90"
-          >
-            Get in touch
-          </a>
-          <Link
-            href="/projects"
-            className="rounded-lg border border-[var(--border)] bg-white/5 px-5 py-2 text-sm font-semibold text-[var(--text-primary)] no-underline transition-colors hover:bg-white/10"
-          >
-            See my work
-          </Link>
-          <a
-            href={profile.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-lg border border-[var(--border)] px-5 py-2 text-sm text-[var(--text-secondary)] no-underline transition-colors hover:bg-white/5 hover:text-[var(--text-primary)]"
-          >
-            GitHub ↗
-          </a>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-[#062023] no-underline transition-opacity hover:opacity-90"
+            >
+              Get in touch
+            </a>
+            <Link
+              href="/projects"
+              className="rounded-lg border border-[var(--border)] bg-white/5 px-5 py-2 text-sm font-semibold text-[var(--text-primary)] no-underline transition-colors hover:bg-white/10"
+            >
+              See my work
+            </Link>
+            <a
+              href={profile.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg border border-[var(--border)] px-5 py-2 text-sm text-[var(--text-secondary)] no-underline transition-colors hover:bg-white/5 hover:text-[var(--text-primary)]"
+            >
+              GitHub ↗
+            </a>
+          </div>
         </div>
-      </section>
 
-      {/* ---- Impact numbers -------------------------------------------- */}
-      <section aria-labelledby="impact-heading">
-        <h2 id="impact-heading" className="sr-only">
-          Impact highlights
-        </h2>
-        <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {impact.map((stat, i) => (
-            <Card key={stat.label} delayIndex={i} className="!p-4">
-              <dt className="sr-only">{stat.label}</dt>
-              <dd className="m-0">
-                <div className="text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
-                  {stat.value}
-                </div>
-                <div className="mt-1.5 text-xs font-medium text-[var(--text-secondary)]">
-                  {stat.label}
-                </div>
-                <div className="mt-1 text-[11px] leading-snug text-[var(--text-muted)]">
-                  {stat.detail}
-                </div>
-              </dd>
-            </Card>
-          ))}
-        </dl>
+        <HeroMetrics />
       </section>
-
-      {/* ---- Live metrics ---------------------------------------------- */}
-      <LiveMetrics />
 
       {/* ---- Experience ------------------------------------------------ */}
       <section aria-labelledby="experience-heading">
@@ -152,61 +132,6 @@ export default function HomePage() {
             </Card>
           ))}
         </div>
-      </section>
-
-      {/* ---- Education, skills, awards ---------------------------------- */}
-      <section aria-labelledby="background-heading" className="grid gap-4 md:grid-cols-2">
-        <h2 id="background-heading" className="sr-only">
-          Education and skills
-        </h2>
-
-        <Card tint="njit" className="md:col-span-2">
-          <h3 className="text-base font-bold">Education</h3>
-          <p className="mt-2 text-sm text-[var(--text-secondary)]">
-            <span className="text-[var(--text-primary)]">{education.degree}</span> ·{" "}
-            {education.school}
-          </p>
-          <p className="mt-1 text-xs text-[var(--text-muted)]">
-            {education.honors} · GPA {education.gpa} · Graduated {education.graduated}
-          </p>
-        </Card>
-
-        <Card delayIndex={1}>
-          <h3 className="text-base font-bold">Skills</h3>
-          <dl className="mt-3 flex flex-col gap-3">
-            {skills.map((group) => (
-              <div key={group.group}>
-                <dt className="text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
-                  {group.group}
-                </dt>
-                <dd className="m-0 mt-1.5 flex flex-wrap gap-1.5">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-md border border-[var(--border)] bg-white/[0.03] px-2 py-0.5 text-xs text-[var(--text-secondary)]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Card>
-
-        <Card delayIndex={2}>
-          <h3 className="text-base font-bold">Awards &amp; leadership</h3>
-          <ul className="mt-3 flex list-none flex-col gap-2 p-0 text-sm text-[var(--text-secondary)]">
-            {awards.map((award) => (
-              <li key={award} className="flex gap-2">
-                <span aria-hidden className="text-[var(--accent-dim)]">
-                  ▸
-                </span>
-                <span>{award}</span>
-              </li>
-            ))}
-          </ul>
-        </Card>
       </section>
     </div>
   );

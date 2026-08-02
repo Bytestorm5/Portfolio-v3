@@ -10,7 +10,6 @@ const internal = [
 ];
 
 const external = [
-  { href: profile.links.blog, label: "Blog" },
   { href: profile.links.github, label: "GitHub" },
   { href: profile.links.linkedin, label: "LinkedIn" },
 ];
