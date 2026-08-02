@@ -1,9 +1,13 @@
 {
-  "generatedAt": "2026-08-02T21:11:18.915Z",
+  "generatedAt": "2026-08-02T22:11:58.384Z",
   "user": "Bytestorm5",
   "totals": {
     "commits": 501,
+    "publicCommits": 501,
+    "privateCommits": 0,
     "repos": 33,
+    "publicRepos": 33,
+    "privateRepos": 0,
     "activeWeeks": 87,
     "spanWeeks": 285,
     "firstCommitWeek": "2021-02-21",
@@ -19,7 +23,7 @@
       },
       {
         "language": "TypeScript",
-        "commits": 105
+        "commits": 106
       },
       {
         "language": "HTML",
@@ -37,11 +41,7 @@
         "language": "C#",
         "commits": 2
       }
-    ],
-    "publicCommits": 501,
-    "privateCommits": 0,
-    "publicRepos": 33,
-    "privateRepos": 0
+    ]
   },
   "weekly": [
     {
@@ -2612,9 +2612,9 @@
   ],
   "repos": [
     {
-      "homepage": "https://the-follow-up.vercel.app",
       "name": "The-FollowUp",
       "url": "https://github.com/Bytestorm5/The-FollowUp",
+      "homepage": "https://the-follow-up.vercel.app",
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2623,9 +2623,9 @@
       "lastWeek": "2026-02-15"
     },
     {
-      "homepage": "https://galaxy-gen-three.vercel.app",
       "name": "GalaxyGen",
       "url": "https://github.com/Bytestorm5/GalaxyGen",
+      "homepage": "https://galaxy-gen-three.vercel.app",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
@@ -2634,9 +2634,9 @@
       "lastWeek": "2026-01-25"
     },
     {
-      "homepage": null,
       "name": "PortfolioSite",
       "url": "https://github.com/Bytestorm5/PortfolioSite",
+      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
@@ -2645,9 +2645,9 @@
       "lastWeek": "2026-04-12"
     },
     {
-      "homepage": null,
       "name": "Buckshot-Roulette-Python",
       "url": "https://github.com/Bytestorm5/Buckshot-Roulette-Python",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 6,
@@ -2656,9 +2656,9 @@
       "lastWeek": "2024-11-17"
     },
     {
-      "homepage": null,
       "name": "BetterMCStats",
       "url": "https://github.com/Bytestorm5/BetterMCStats",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 1,
@@ -2667,9 +2667,9 @@
       "lastWeek": "2024-06-09"
     },
     {
-      "homepage": null,
       "name": "UTTT-Code-Tournament",
       "url": "https://github.com/Bytestorm5/UTTT-Code-Tournament",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2678,9 +2678,9 @@
       "lastWeek": "2024-06-09"
     },
     {
-      "homepage": null,
       "name": "Bytestorm5",
       "url": "https://github.com/Bytestorm5/Bytestorm5",
+      "homepage": null,
       "description": null,
       "language": null,
       "stars": 0,
@@ -2689,9 +2689,9 @@
       "lastWeek": "2026-07-12"
     },
     {
-      "homepage": null,
       "name": "EconomyGame",
       "url": "https://github.com/Bytestorm5/EconomyGame",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2700,9 +2700,9 @@
       "lastWeek": "2025-08-03"
     },
     {
-      "homepage": null,
       "name": "al-asl-frontend",
       "url": "https://github.com/Bytestorm5/al-asl-frontend",
+      "homepage": null,
       "description": null,
       "language": "TypeScript",
       "stars": 0,
@@ -2711,9 +2711,9 @@
       "lastWeek": "2025-02-23"
     },
     {
-      "homepage": null,
       "name": "Whitehouse-Watcher",
       "url": "https://github.com/Bytestorm5/Whitehouse-Watcher",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2722,9 +2722,9 @@
       "lastWeek": "2025-01-19"
     },
     {
-      "homepage": null,
       "name": "NJIT-Course-Update",
       "url": "https://github.com/Bytestorm5/NJIT-Course-Update",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2733,9 +2733,9 @@
       "lastWeek": "2024-01-07"
     },
     {
-      "homepage": null,
       "name": "YWCC-RG-Bot",
       "url": "https://github.com/Bytestorm5/YWCC-RG-Bot",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2744,9 +2744,9 @@
       "lastWeek": "2024-08-25"
     },
     {
-      "homepage": null,
       "name": "Al-Asl-TempLanding",
       "url": "https://github.com/Bytestorm5/Al-Asl-TempLanding",
+      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
@@ -2755,9 +2755,9 @@
       "lastWeek": "2025-01-05"
     },
     {
-      "homepage": null,
       "name": "News-Bot",
       "url": "https://github.com/Bytestorm5/News-Bot",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2766,9 +2766,9 @@
       "lastWeek": "2025-05-25"
     },
     {
-      "homepage": null,
       "name": "VidTranscriptionTool",
       "url": "https://github.com/Bytestorm5/VidTranscriptionTool",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2777,9 +2777,9 @@
       "lastWeek": "2024-11-10"
     },
     {
-      "homepage": null,
       "name": "CS492-WRF",
       "url": "https://github.com/Bytestorm5/CS492-WRF",
+      "homepage": null,
       "description": null,
       "language": "Shell",
       "stars": 0,
@@ -2788,9 +2788,9 @@
       "lastWeek": "2024-02-18"
     },
     {
-      "homepage": null,
       "name": "Buckshot-RL",
       "url": "https://github.com/Bytestorm5/Buckshot-RL",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2799,9 +2799,9 @@
       "lastWeek": "2024-10-06"
     },
     {
-      "homepage": null,
       "name": "wargame-bot",
       "url": "https://github.com/Bytestorm5/wargame-bot",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2810,9 +2810,9 @@
       "lastWeek": "2026-05-10"
     },
     {
-      "homepage": null,
       "name": "Project-Time-Tracker",
       "url": "https://github.com/Bytestorm5/Project-Time-Tracker",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2821,9 +2821,9 @@
       "lastWeek": "2025-07-06"
     },
     {
-      "homepage": null,
       "name": "SIG-AI-Workshop-Stocks",
       "url": "https://github.com/Bytestorm5/SIG-AI-Workshop-Stocks",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2832,9 +2832,9 @@
       "lastWeek": "2023-09-17"
     },
     {
-      "homepage": null,
       "name": "AlgoBlocker",
       "url": "https://github.com/Bytestorm5/AlgoBlocker",
+      "homepage": null,
       "description": null,
       "language": "JavaScript",
       "stars": 0,
@@ -2843,9 +2843,9 @@
       "lastWeek": "2025-06-01"
     },
     {
-      "homepage": null,
       "name": "FeedbackTemp",
       "url": "https://github.com/Bytestorm5/FeedbackTemp",
+      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
@@ -2854,9 +2854,9 @@
       "lastWeek": "2025-05-04"
     },
     {
-      "homepage": "https://serverless-mailer-rho.vercel.app",
       "name": "ServerlessMailer",
       "url": "https://github.com/Bytestorm5/ServerlessMailer",
+      "homepage": "https://serverless-mailer-rho.vercel.app",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
@@ -2865,9 +2865,9 @@
       "lastWeek": "2026-07-26"
     },
     {
-      "homepage": null,
       "name": "Live-Search",
       "url": "https://github.com/Bytestorm5/Live-Search",
+      "homepage": null,
       "description": null,
       "language": "TypeScript",
       "stars": 0,
@@ -2876,9 +2876,9 @@
       "lastWeek": "2026-06-21"
     },
     {
-      "homepage": null,
       "name": "MC-Netro-Planner",
       "url": "https://github.com/Bytestorm5/MC-Netro-Planner",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2887,9 +2887,9 @@
       "lastWeek": "2026-03-08"
     },
     {
-      "homepage": null,
       "name": "MsgCountPlus",
       "url": "https://github.com/Bytestorm5/MsgCountPlus",
+      "homepage": null,
       "description": "A statistics bot that tracks and graphs activity of discord chats. This code was not meant to be viewed by anyone else, so excuse some of the messy code / lack of comments.",
       "language": "C#",
       "stars": 0,
@@ -2898,9 +2898,9 @@
       "lastWeek": "2024-06-09"
     },
     {
-      "homepage": null,
       "name": "DMR-Search",
       "url": "https://github.com/Bytestorm5/DMR-Search",
+      "homepage": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
@@ -2909,20 +2909,20 @@
       "lastWeek": "2023-02-12"
     },
     {
-      "homepage": null,
       "name": "Portfolio-v3",
       "url": "https://github.com/Bytestorm5/Portfolio-v3",
+      "homepage": "https://portfolio-v3-ten-virid.vercel.app",
       "description": null,
-      "language": null,
+      "language": "TypeScript",
       "stars": 0,
       "commits": 1,
       "firstWeek": "2026-08-02",
       "lastWeek": "2026-08-02"
     },
     {
-      "homepage": "https://stellaris-mod-utils.vercel.app",
       "name": "Stellaris-Mod-Utils",
       "url": "https://github.com/Bytestorm5/Stellaris-Mod-Utils",
+      "homepage": "https://stellaris-mod-utils.vercel.app",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
@@ -2931,9 +2931,9 @@
       "lastWeek": "2026-06-14"
     },
     {
-      "homepage": null,
       "name": "EconomyGame-2",
       "url": "https://github.com/Bytestorm5/EconomyGame-2",
+      "homepage": null,
       "description": null,
       "language": "Python",
       "stars": 0,
@@ -2942,9 +2942,9 @@
       "lastWeek": "2026-06-07"
     },
     {
-      "homepage": null,
       "name": "dep-analyzer",
       "url": "https://github.com/Bytestorm5/dep-analyzer",
+      "homepage": null,
       "description": null,
       "language": null,
       "stars": 1,
@@ -2953,9 +2953,9 @@
       "lastWeek": "2026-04-19"
     },
     {
-      "homepage": null,
       "name": "BacktrackLM",
       "url": "https://github.com/Bytestorm5/BacktrackLM",
+      "homepage": null,
       "description": null,
       "language": null,
       "stars": 0,
@@ -2964,9 +2964,9 @@
       "lastWeek": "2025-06-08"
     },
     {
-      "homepage": null,
       "name": "CubeComp_Finder",
       "url": "https://github.com/Bytestorm5/CubeComp_Finder",
+      "homepage": null,
       "description": "A script that locates and filters Rubik's Cube Competitions based on distance.",
       "language": "Python",
       "stars": 1,
