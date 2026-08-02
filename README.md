@@ -58,6 +58,13 @@ Concurrent requests share a single in-flight collection rather than each startin
 their own, and a failed collection leaves the previous snapshot in place — the site
 keeps serving the last good data and the response says so.
 
+On success it calls `revalidatePath` for `/` and `/projects`. Both pages are
+statically generated with a one-hour `revalidate`, so without that purge a fresh
+collection would not appear until the window happened to expire — the API would show
+new numbers while the chart still showed old ones. The time-based window stays as a
+backstop. The collector also logs each repo it reads and a one-line summary, so a run
+can be diagnosed from the platform's function logs.
+
 | Env var | Purpose |
 | --- | --- |
 | `METRICS_CRON_SECRET` / `CRON_SECRET` | Bearer token the endpoint requires. Without one set, the endpoint refuses to run in production. Vercel Cron sends `CRON_SECRET` automatically. |

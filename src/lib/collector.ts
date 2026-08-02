@@ -122,6 +122,11 @@ export async function collectMetrics(options: CollectOptions = {}): Promise<Metr
   const user = options.user ?? metricsUser();
   const token = options.token ?? process.env.GITHUB_TOKEN;
   const log = options.log ?? (() => {});
+  const pinned =
+    options.repos ??
+    process.env.METRICS_REPOS?.split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
 
   async function gh(path: string, retries = 3): Promise<Response> {
     const url = path.startsWith("http") ? path : `https://api.github.com${path}`;
@@ -196,10 +201,10 @@ export async function collectMetrics(options: CollectOptions = {}): Promise<Metr
    * actually belongs to the user we're collecting for.
    */
   async function listRepos(): Promise<GitHubRepo[]> {
-    if (options.repos?.length) {
-      log(`collecting ${options.repos.length} pinned repos`);
+    if (pinned?.length) {
+      log(`collecting ${pinned.length} pinned repos`);
       return Promise.all(
-        options.repos.map(async (name) => {
+        pinned.map(async (name) => {
           const full = name.includes("/") ? name : `${user}/${name}`;
           return (await gh(`/repos/${full}`)).json() as Promise<GitHubRepo>;
         }),

@@ -1,7 +1,15 @@
 import { timingSafeEqual } from "node:crypto";
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { collectMetrics } from "@/lib/collector";
 import { readSnapshot, writeSnapshot } from "@/lib/store";
+
+/**
+ * Pages that render the snapshot. They are statically generated with a time
+ * based `revalidate`, so without an explicit purge a fresh collection would
+ * not show up until that window elapsed.
+ */
+const SNAPSHOT_PAGES = ["/", "/projects"];
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -74,8 +82,19 @@ async function handle(request: Request) {
   }
 
   const started = !inFlight;
-  inFlight ??= collectMetrics()
-    .then(async (metrics) => ({ metrics, persisted: await writeSnapshot(metrics) }))
+  inFlight ??= collectMetrics({ log: (message) => console.log("[metrics]", message) })
+    .then(async (metrics) => {
+      const persisted = await writeSnapshot(metrics);
+      // Purge the rendered pages so the new numbers are visible immediately
+      // rather than whenever the time based window happens to expire.
+      for (const path of SNAPSHOT_PAGES) revalidatePath(path);
+      console.log(
+        `[metrics] stored ${metrics.totals.commits} commits ` +
+          `(${metrics.totals.publicCommits} public / ${metrics.totals.privateCommits} private) ` +
+          `via ${persisted.backend}; revalidated ${SNAPSHOT_PAGES.join(", ")}`,
+      );
+      return { metrics, persisted };
+    })
     .finally(() => {
       inFlight = null;
     });
@@ -87,6 +106,7 @@ async function handle(request: Request) {
         status: started ? "collected" : "joined-in-flight",
         generatedAt: metrics.generatedAt,
         persisted,
+        revalidated: SNAPSHOT_PAGES,
         totals: metrics.totals,
       },
       { status: 200, headers: { "Cache-Control": "no-store" } },
