@@ -1,6 +1,7 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import type { Metrics } from "./collector";
+import { metricsUser, type Metrics } from "./collector.ts";
+import { COMMITS_COLLECTION, getDb, mongoConfigured } from "./mongo.ts";
 
 const FILENAME = "github-metrics.json";
 
@@ -57,23 +58,46 @@ async function readFrom(path: string): Promise<Metrics | null> {
   }
 }
 
+/** One document per collected user, upserted in place. */
+async function readFromMongo(): Promise<Metrics | null> {
+  const db = await getDb();
+  return db
+    .collection<Metrics>(COMMITS_COLLECTION)
+    .findOne(
+      { _id: metricsUser() } as Record<string, unknown>,
+      // _id is storage bookkeeping, not part of the snapshot the site serves.
+      { projection: { _id: 0 } },
+    ) as Promise<Metrics | null>;
+}
+
 /**
  * Returns the freshest snapshot available, or null when nothing has ever been
  * collected — callers render an explicit empty state rather than a chart with
  * no data in it.
+ *
+ * Mongo is the source of truth once configured, but a read failure must never
+ * break a render or a build: it falls through to the snapshot committed in
+ * data/, so the site degrades to slightly stale rather than empty.
  */
 export async function readSnapshot(): Promise<Metrics | null> {
+  if (mongoConfigured()) {
+    try {
+      const doc = await readFromMongo();
+      if (doc?.weekly?.length) return normalize(doc);
+    } catch (error) {
+      console.error("[metrics] Mongo read failed, falling back to bundle:", error);
+    }
+  }
   return (await readFrom(runtimePath())) ?? (await readFrom(bundledPath()));
 }
 
 export type PersistResult = {
-  backend: "github" | "filesystem";
-  /** False when the data was unchanged and no write was needed. */
+  backend: "mongodb" | "filesystem";
   written: boolean;
+  /** Whether this run actually changed the numbers, for observability. */
+  dataChanged?: boolean;
   detail?: string;
 };
-
-const REPO_PATH = "data/github-metrics.json";
 
 /** Everything except the timestamp — two snapshots of the same data match. */
 function sameData(a: Metrics, b: Metrics): boolean {
@@ -85,63 +109,32 @@ function sameData(a: Metrics, b: Metrics): boolean {
 const serialize = (metrics: Metrics) => `${JSON.stringify(metrics, null, 2)}\n`;
 
 /**
- * Commits the snapshot back to the repo through the GitHub contents API.
- *
- * Serverless platforms give functions a read-only filesystem, so there is
- * nowhere durable to write. Committing keeps the data versioned and lets the
- * resulting deploy serve it, which is how the site reads it — no runtime
- * fetch on the render path.
+ * Upserts the snapshot into PortfolioSite.metrics.commits, keyed by user, so
+ * repeated collections replace the document rather than accumulating copies.
+ * The weekly series inside the document is itself the history, so nothing is
+ * lost by keeping exactly one.
  */
-async function writeToGitHub(metrics: Metrics, repo: string): Promise<PersistResult> {
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) throw new Error("METRICS_REPO is set but GITHUB_TOKEN is not");
+async function writeToMongo(metrics: Metrics): Promise<PersistResult> {
+  const db = await getDb();
+  const collection = db.collection<Metrics>(COMMITS_COLLECTION);
+  const key = { _id: metricsUser() } as Record<string, unknown>;
 
-  const branch = process.env.METRICS_GIT_BRANCH ?? "main";
-  const base = `https://api.github.com/repos/${repo}/contents/${REPO_PATH}`;
-  const headers = {
-    Accept: "application/vnd.github+json",
-    Authorization: `Bearer ${token}`,
-    "X-GitHub-Api-Version": "2022-11-28",
-    "Content-Type": "application/json",
-  };
+  const previous = (await collection.findOne(key, {
+    projection: { _id: 0 },
+  })) as Metrics | null;
 
-  let sha: string | undefined;
-  const existing = await fetch(`${base}?ref=${encodeURIComponent(branch)}`, { headers });
-  if (existing.ok) {
-    const body = (await existing.json()) as { sha: string; content: string };
-    sha = body.sha;
-    try {
-      const current = JSON.parse(
-        Buffer.from(body.content, "base64").toString("utf8"),
-      ) as Metrics;
-      // Only the timestamp moved: committing would trigger a pointless
-      // rebuild every single day.
-      if (sameData(current, metrics)) {
-        return { backend: "github", written: false, detail: "data unchanged" };
-      }
-    } catch {
-      // Unparseable existing file — fall through and overwrite it.
-    }
-  } else if (existing.status !== 404) {
-    throw new Error(`GitHub ${existing.status} reading ${REPO_PATH}`);
-  }
-
-  const res = await fetch(base, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify({
-      message: "chore(metrics): refresh GitHub commit snapshot",
-      content: Buffer.from(serialize(metrics)).toString("base64"),
-      branch,
-      sha,
-    }),
+  await collection.replaceOne(key, { ...key, ...metrics } as Metrics, {
+    upsert: true,
   });
 
-  if (!res.ok) {
-    throw new Error(`GitHub ${res.status} writing ${REPO_PATH}: ${await res.text()}`);
-  }
-
-  return { backend: "github", written: true, detail: `committed to ${repo}@${branch}` };
+  return {
+    backend: "mongodb",
+    written: true,
+    // generatedAt always advances so the idempotency window tracks the last
+    // successful collection, not the last time the numbers moved.
+    dataChanged: !previous || !sameData(previous, metrics),
+    detail: `${db.databaseName}.${COMMITS_COLLECTION}`,
+  };
 }
 
 /** Writes via a temp file + rename so a reader never sees a half-written file. */
@@ -155,11 +148,10 @@ async function writeToFile(metrics: Metrics): Promise<PersistResult> {
 }
 
 /**
- * Persists the snapshot. Set METRICS_REPO (e.g. "Bytestorm5/Portfolio-v3") on
- * a read-only host to commit instead of writing to disk; without it, the
- * filesystem path is used, which suits the container deployment.
+ * Persists the snapshot to Mongo when MONGODB_URI is set — required on hosts
+ * with a read-only filesystem — and to disk otherwise, which suits local runs
+ * and the container deployment.
  */
 export async function writeSnapshot(metrics: Metrics): Promise<PersistResult> {
-  const repo = process.env.METRICS_REPO;
-  return repo ? writeToGitHub(metrics, repo) : writeToFile(metrics);
+  return mongoConfigured() ? writeToMongo(metrics) : writeToFile(metrics);
 }

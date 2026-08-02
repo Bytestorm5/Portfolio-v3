@@ -99,6 +99,11 @@ async function mapWithConcurrency<T, R>(
   return results;
 }
 
+/** Single source of truth for whose commits we collect and key storage by. */
+export function metricsUser(): string {
+  return process.env.METRICS_USER ?? "Bytestorm5";
+}
+
 export type CollectOptions = {
   user?: string;
   token?: string;
@@ -114,7 +119,7 @@ const weekKey = (unixSeconds: number) =>
   new Date(unixSeconds * 1000).toISOString().slice(0, 10);
 
 export async function collectMetrics(options: CollectOptions = {}): Promise<Metrics> {
-  const user = options.user ?? process.env.METRICS_USER ?? "Bytestorm5";
+  const user = options.user ?? metricsUser();
   const token = options.token ?? process.env.GITHUB_TOKEN;
   const log = options.log ?? (() => {});
 

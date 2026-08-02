@@ -9,6 +9,10 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    // src/lib is imported both by the bundler and directly by Node (the
+    // `metrics` CLI runs the .ts files through Node's type stripping), and
+    // Node's ESM resolver requires explicit extensions on relative imports.
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",

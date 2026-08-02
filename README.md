@@ -25,6 +25,10 @@ The hero panel is fed by a snapshot produced by `src/lib/collector.ts`:
 3. Keeps only commits authored by the user, splits each week into public and private
    buckets, and fills in the quiet weeks so the x-axis stays real time rather than
    collapsing gaps.
+4. Upserts the result into MongoDB (see Persistence below).
+
+The GitHub token only ever reads — nothing is written back to GitHub — so a
+read-only token is all this needs.
 
 **Private repositories are counted but never named.** Only their commit totals reach
 the snapshot — no name, URL, or description — so the public/private split can be shown
@@ -57,12 +61,12 @@ keeps serving the last good data and the response says so.
 | Env var | Purpose |
 | --- | --- |
 | `METRICS_CRON_SECRET` / `CRON_SECRET` | Bearer token the endpoint requires. Without one set, the endpoint refuses to run in production. Vercel Cron sends `CRON_SECRET` automatically. |
-| `GITHUB_TOKEN` | GitHub auth. Needs `repo` scope to see private repos, and write access to this repo when `METRICS_REPO` is set. |
-| `METRICS_REPO` | e.g. `Bytestorm5/Portfolio-v3`. Set it to persist by committing (required on read-only hosts); leave unset to write to disk. |
-| `METRICS_GIT_BRANCH` | Branch to commit to. Default `main`. |
-| `METRICS_USER` | Defaults to `Bytestorm5`. |
+| `MONGODB_URI` | Connection string. When set, Mongo is both the read and write path. |
+| `MONGODB_DB` | Database name. Defaults to `PortfolioSite`. The URI's own default database is ignored. |
+| `GITHUB_TOKEN` | GitHub auth. **Read-only is sufficient** — nothing is ever written back to GitHub. Needs read access to private repo contents/metadata to include them in the split. |
+| `METRICS_USER` | Defaults to `Bytestorm5`. Also the `_id` the snapshot is stored under. |
 | `METRICS_MIN_INTERVAL_HOURS` | Idempotency window. Default 20. |
-| `METRICS_DATA_DIR` | Filesystem write path when `METRICS_REPO` is unset. Defaults to `data/`. |
+| `METRICS_DATA_DIR` | Filesystem write path when `MONGODB_URI` is unset. Defaults to `data/`. |
 
 The snapshot itself is served at `/api/metrics`.
 
@@ -75,26 +79,32 @@ METRICS_REPOS=PortfolioSite,Portfolio-v3 npm run metrics    # pin to specific re
 
 ### Persistence
 
-Two backends, picked by whether `METRICS_REPO` is set:
+Two backends, picked by whether `MONGODB_URI` is set:
 
-- **Commit-back (`METRICS_REPO` set).** The snapshot is written to
-  `data/github-metrics.json` through the GitHub contents API. Required on serverless
-  hosts, where the function filesystem is read-only and `/tmp` is per-instance and
-  ephemeral — there is nowhere durable to write. The resulting deploy serves the new
-  data, so the render path never fetches at runtime. If the collected data is
-  identical to what is already committed (ignoring `generatedAt`), no commit is made,
-  so a quiet day doesn't trigger a rebuild.
-- **Filesystem (default).** Writes to `METRICS_DATA_DIR`, default `data/`. Suits the
-  container deployment — mount a volume at `data/` to keep snapshots across restarts.
+- **MongoDB (`MONGODB_URI` set).** The snapshot is upserted into
+  `PortfolioSite.metrics.commits` as a single document keyed by `_id: <user>`, so
+  repeated collections replace it rather than accumulating copies — the weekly series
+  inside the document is itself the history, so keeping one loses nothing. Required on
+  serverless hosts, where the function filesystem is read-only and `/tmp` is
+  per-instance and ephemeral. Reads go to Mongo too: without a deploy to bake in new
+  data, the bundled file would never change.
+- **Filesystem (default).** Writes to `METRICS_DATA_DIR`, default `data/`. Suits local
+  runs and the container deployment — mount a volume at `data/` to keep snapshots
+  across restarts.
 
-Either way, reads come from the on-disk snapshot, falling back to the copy committed
-in `data/` until a collection has run. Snapshots predating the public/private split
-are upgraded on read rather than rendering as gaps.
+A Mongo read failure never breaks a render or a build: it logs and falls through to
+the snapshot committed in `data/`, so the site degrades to slightly stale rather than
+empty. `_id` is projected out, so it never reaches `/api/metrics`. Snapshots predating
+the public/private split are upgraded on read rather than rendering as gaps.
 
-> **Note:** the committed snapshot currently only covers `PortfolioSite` and
+`generatedAt` advances on every successful collection, including ones where the
+numbers didn't move, so the idempotency window tracks the last run rather than the
+last change. The response reports `dataChanged` separately.
+
+> **Note:** the committed fallback snapshot only covers `PortfolioSite` and
 > `Portfolio-v3`, and shows no private commits — it was seeded from an environment
-> whose GitHub credential was scoped to those two repos. The first real collection
-> replaces it.
+> whose GitHub credential was scoped to those two repos. It is only used until the
+> first collection populates Mongo.
 
 ## Development
 
@@ -112,14 +122,15 @@ on UTC with no timezone support, so this is 05:00 EST in winter and 06:00 EDT in
 summer. Adjust to `0 9 * * *` if you would rather it track EDT. Vercel sends
 `Authorization: Bearer $CRON_SECRET` automatically once `CRON_SECRET` is set.
 
-Required project env vars: `CRON_SECRET`, `GITHUB_TOKEN`, and
-`METRICS_REPO=Bytestorm5/Portfolio-v3` (see Persistence above — without it the
-function will try to write to a read-only filesystem).
+Required project env vars: `CRON_SECRET`, `GITHUB_TOKEN` (read-only is fine), and
+`MONGODB_URI` (see Persistence above — without it the function will try to write to a
+read-only filesystem). Set these for the Build environment too, so prerenders read
+live data rather than the committed fallback.
 
 **Container.** The `Dockerfile` builds a standalone image for the
 container-to-droplet path v2 used; note it copies `data/` into the image, since the
-snapshot is read at runtime. Leave `METRICS_REPO` unset there and drive the endpoint
-from any cron runner.
+snapshot is read at runtime. Leave `MONGODB_URI` unset there to use the filesystem
+backend (mount a volume at `data/`), and drive the endpoint from any cron runner.
 
 ## Layout
 
