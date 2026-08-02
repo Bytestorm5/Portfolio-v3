@@ -93,8 +93,8 @@ const serialize = (metrics: Metrics) => `${JSON.stringify(metrics, null, 2)}\n`;
  * fetch on the render path.
  */
 async function writeToGitHub(metrics: Metrics, repo: string): Promise<PersistResult> {
-  const token = process.env.METRICS_GITHUB_TOKEN ?? process.env.GITHUB_TOKEN;
-  if (!token) throw new Error("METRICS_REPO is set but no GitHub token is available");
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) throw new Error("METRICS_REPO is set but GITHUB_TOKEN is not");
 
   const branch = process.env.METRICS_GIT_BRANCH ?? "main";
   const base = `https://api.github.com/repos/${repo}/contents/${REPO_PATH}`;

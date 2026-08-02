@@ -115,8 +115,7 @@ const weekKey = (unixSeconds: number) =>
 
 export async function collectMetrics(options: CollectOptions = {}): Promise<Metrics> {
   const user = options.user ?? process.env.METRICS_USER ?? "Bytestorm5";
-  const token =
-    options.token ?? process.env.METRICS_GITHUB_TOKEN ?? process.env.GITHUB_TOKEN;
+  const token = options.token ?? process.env.GITHUB_TOKEN;
   const log = options.log ?? (() => {});
 
   async function gh(path: string, retries = 3): Promise<Response> {

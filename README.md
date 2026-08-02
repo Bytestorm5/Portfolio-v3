@@ -57,7 +57,7 @@ keeps serving the last good data and the response says so.
 | Env var | Purpose |
 | --- | --- |
 | `METRICS_CRON_SECRET` / `CRON_SECRET` | Bearer token the endpoint requires. Without one set, the endpoint refuses to run in production. Vercel Cron sends `CRON_SECRET` automatically. |
-| `METRICS_GITHUB_TOKEN` / `GITHUB_TOKEN` | GitHub auth. Needs `repo` scope to see private repos, and write access to this repo when `METRICS_REPO` is set. |
+| `GITHUB_TOKEN` | GitHub auth. Needs `repo` scope to see private repos, and write access to this repo when `METRICS_REPO` is set. |
 | `METRICS_REPO` | e.g. `Bytestorm5/Portfolio-v3`. Set it to persist by committing (required on read-only hosts); leave unset to write to disk. |
 | `METRICS_GIT_BRANCH` | Branch to commit to. Default `main`. |
 | `METRICS_USER` | Defaults to `Bytestorm5`. |
@@ -112,7 +112,7 @@ on UTC with no timezone support, so this is 05:00 EST in winter and 06:00 EDT in
 summer. Adjust to `0 9 * * *` if you would rather it track EDT. Vercel sends
 `Authorization: Bearer $CRON_SECRET` automatically once `CRON_SECRET` is set.
 
-Required project env vars: `CRON_SECRET`, `METRICS_GITHUB_TOKEN`, and
+Required project env vars: `CRON_SECRET`, `GITHUB_TOKEN`, and
 `METRICS_REPO=Bytestorm5/Portfolio-v3` (see Persistence above — without it the
 function will try to write to a read-only filesystem).
 
